@@ -1,0 +1,24 @@
+//if (localStats.byteCount < localStats.memoryCapacity) {	\
+//document.getElementById('networkError').style.display
+//$.ajax({ type : "POST", url : "https://gameserver.dripstat.com/rest/l15/game/lb", data : { name : "MagTux" }, success : function (e) { console.log(e.lb) } })
+
+var scriptContent = " \
+	var runLoop = function () { \
+		if (uiElemManager.networkError.el()[0].style.display != '') { \
+			location.reload();	\
+		};	\
+		if (localStats.byteCount < localStats.memoryCapacity) {	\
+			var t = CoffeeCup.calcBytesPerClick()*20;	\
+			localStats.byteCount + t > localStats.memoryCapacity && (t = localStats.memoryCapacity - localStats.byteCount), localStats.byteCount += t,	\
+			popManager.newPop('btn-addMem', '+' + NumUtils.byteConvert(t, 2))	\
+		} else dripper.dripGlobal(!1); \
+		setTimeout(runLoop,1001); \
+	}; \
+	setTimeout(runLoop,5*1000); \
+	";
+
+//var scriptContent = "alert('Injected'); alert(localStats.byteCount);";
+var script = document.createElement('script');
+script.id = 'tmpScript';
+script.appendChild(document.createTextNode(scriptContent));
+(document.body || document.head || document.documentElement).appendChild(script);

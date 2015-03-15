@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="signet:authors" content="I see you are trying to hack me. Easier to just use one of these ready-made plugins:, Google for &quot;DripStat DataMonster&quot;or &quot;DripBot&quot;">
+<meta name="signet:links" content="https://twitter.com/dripstat">
+<title>DripStat Game</title>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1424112260,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"47f7f008deca6ccd1641c82ab31e02dc",petok:"b112b0afac11a14a01091a67c175928ad88c2a0c-1424325825-1800",zone:"dripstat.com",rocket:"0",apps:{"abetterbrowser":{"ie":"7"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=919620257c/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="combined.2015-01-31-20-56-17.min.css"/>
+</head>
+<body><div id="fb-root"></div>
+<script>(function (d, s, id)
+{
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=263916973643014";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="navbar navbar-inverse navbar-static-top">
+<div class="navbar-header"><a id="dslogo" href="/" onclick="NavbarAccount.navigateAway()" class="navbar-brand"><img src="img/dslogo.png"></a></div>
+<div id="accNavbar" style="display:none" class="navbar-collapse">
+<ul class="nav navbar-nav">
+<li><a href="/app/index.html#/jvms" onclick="NavbarAccount.navigateAway()"><i class="fa fa-coffee"></i>&nbsp;JVMs</a></li>
+<li class="active"><a href="/game" onclick="NavbarAccount.navigateAway()"><i class="fa fa-gamepad"></i>&nbsp;Game</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a href="http://www.reddit.com/r/DripStat/" target="_blank" class="navCustomLabel navCustomLink">Reddit</a></li>
+<li><a href="http://blog.dripstat.com/" target="_blank" class="navCustomLabel navCustomLink">Blog</a></li>
+<li class="navCustomElem"><a href="https://twitter.com/dripstat" data-show-count="false" class="twitter-follow-button">Follow &#64;dripstat</a></li>
+<li><a class="navCustomLabel">Get your friends to Drip :</a></li>
+<li class="navCustomElem">
+<div data-href="https://dripstat.com/game/" data-type="button_count" class="fb-share-button"></div>
+</li>
+<li>
+<div>&nbsp;</div>
+</li>
+<li class="navCustomElem"><a href="https://twitter.com/share" data-text="DripStat: Java Monitoring + Real Time MMO Game" data-via="dripstat" class="twitter-share-button">Tweet</a></li>
+<li><a href="/app/index.html#/account" onclick="NavbarAccount.navigateAway()">Account</a></li>
+<li><a id="logoutButton" href="#">Logout</a></li>
+</ul>
+</div>
+<div id="anonNavbar" style="display:none" class="navbar-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="http://www.reddit.com/r/DripStat/" target="_blank" class="navCustomLabel navCustomLink">Reddit</a></li>
+<li><a href="http://blog.dripstat.com/" target="_blank" class="navCustomLabel navCustomLink">Blog</a></li>
+<li class="navCustomElem"><a href="https://twitter.com/dripstat" data-show-count="false" class="twitter-follow-button">Follow &#64;dripstat</a></li>
+<li><a class="navCustomLabel">Get your friends to Drip :</a></li>
+<li class="navCustomElem">
+<div data-href="https://dripstat.com/game/" data-type="button_count" class="fb-share-button"></div>
+</li>
+<li>
+<div>&nbsp;</div>
+</li>
+<li class="navCustomElem"><a href="https://twitter.com/share" data-text="DripStat: Java Monitoring + Real Time MMO Game" data-via="dripstat" class="twitter-share-button">Tweet</a></li>
+<li><a class="navCustomLabel">To Save Current Progress:</a></li>
+<li><a id="signupBtn" href="#" class="btn btn-success">Signup</a></li>
+<li><a href="/login.html">Login</a></li>
+</ul>
+</div>
+</div>
+<div id="pops"></div>
+<div id="tooltipAnchor">
+<div id="tooltip"></div>
+</div>
+<div id="storyNotifications"></div>
+<div id="networkError">Error: Please reload page</div>
+<div id="signupDlg" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button id="signupCloseBtn" type="button" data-dismiss="modal" class="close">&times;</button>
+<h3 id="signUpTitle" class="modal-title">Sign Up</h3>
+<p id="signUpHeadText" style="margin-bottom:0;"></p>
+</div>
+<div class="modal-body">
+<form id="signupForm" role="form" class="form">
+<p>
+<div id="signupError" style="display:none;" class="alert alert-danger"></div>
+</p>
+<p>
+<input id="sgnFname" name="fname" placeholder="First Name" type="text" required="required" autofocus="autofocus" class="form-control">
+</p>
+<p>
+<input id="sgnLname" name="lname" placeholder="Last Name" type="text" required="required" class="form-control">
+</p>
+<p>
+<input id="sgnCompany" name="company" placeholder="Company" type="text" required="required" class="form-control">
+</p>
+<p>
+<input id="sgnEmail" name="email" placeholder="Email" type="email" class="form-control">
+</p>
+<p>
+<input id="sgnPass" name="pass" placeholder="Password" type="password" class="form-control">
+</p>
+<button id="signupFormBtn" type="submit" class="btn btn-lg btn-primary btn-block">Sign up</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="my-fluid-container">
+<div id="gameContainerRow" class="row">
+<div id="globalInfo" style="visibility:hidden;" class="col-xs-4">
+<h3 style="padding-left:5px; margin-top:10px"><b>Global Memory</b></h3>
+<div id="globalHeapText" style="padding-left:5px">Total Bytes Dripped:&nbsp;&nbsp;<span id="global-heap-count-text"><span id="global-heap-count-current"></span><span id="global-heap-count-current-bytes"></span></span></div>
+<div id="globaltab">
+<div id="goalMain" class="row goalPanel">
+<div class="col-xs-2"><img src="img/trophy.png"></div>
+<div class="col-xs-10">
+<div class="globalHeapText">
+<div id="globalHeapMsg1" style=" font-size:16px;">Unlock <b>DripStat Level 17</b>
+<div>StackStorm</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div class="progress progress-striped active">
+<div id="globalProgressBar" role="progressbar" class="progress-bar progress-bar-warning"></div><span id="global-heap-count-remaining" class="progressText"></span>
+</div>
+</div>
+</div>
+</div>
+<div id="leaderBoard">
+<table class="table table-condensed"></table>
+</div>
+<ul id="dripChartTabs" class="nav nav-tabs">
+<li><a href="#globalDripTab" data-toggle="tab">Global</a></li>
+<li><a href="#personalDripTab" data-toggle="tab" style="display:none">Personal</a></li>
+<li><a href="#jvmTab" data-toggle="tab" style="display:none">Dripped JVMs</a></li>
+<li><a id="mineTabHeader" href="#mineTab" data-toggle="tab" style="display:none">Global Mine</a></li>
+</ul>
+<div class="row">
+<div class="col-xs-12">
+<div class="tab-content">
+<div id="globalDripTab" class="tab-pane active">
+<div class="row">
+<div class="col-xs-12">
+<div id="chartContainer"></div>
+</div>
+</div>
+</div>
+<div id="personalDripTab" class="tab-pane active">
+<div class="row">
+<div class="col-xs-12">
+<div id="personalChartContainer"></div>
+</div>
+</div>
+</div>
+<div id="jvmTab" class="tab-pane active">
+<div class="row">
+<div class="col-xs-12">
+<div id="jvmTabContent">
+<div id="dripJVMGrid">
+<table id="dripJVMTable" class="table table-condensed">
+<thead>
+<tr>
+<th>Name</th>
+<th>Drip Amount</th>
+<th>Drips in</th>
+<th>Mines in</th>
+<th>Boosted Drip</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<button id="dripJVMAddButton" class="btn btn-info">Add JVM</button>
+</div>
+<div id="dripJVMSignup">
+<div><span>
+<button id="dripJVMSignupButton" class="btn btn-success btn-lg">Signup</button></span><span>&nbsp;&nbsp;<b>to Drip JVMs</b> (Your progress will be saved).</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="mineTab" class="tab-pane active">
+<div class="row">
+<div class="col-xs-12">
+<div id="mineTabContainer">
+<div id="mineHeader">Available Spring Beans</div>
+<div id="mineCount">0</div>
+<div id="mineButtonWrapper">
+<button id="btnMineGrab" class="btn btn-success">Grab Spring Bean</button>
+</div>
+<div id="mineUnlockedMsg">Spring Framework unlocked for you!</div>
+<button id="btnMineInfo" class="btn btn-default">How to mine?</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="text-align:center;" id="middleColumn" class="col-xs-5">
+<div class="row">
+<div class="col-xs-12">
+<div id="memoryLimit"><span>Capacity:</span><span class="amount"></span><span class="amountBytes"></span></div>
+<div class="progress">
+<div id="localProgressBar" role="progressbar" class="progress-bar progress-bar-info"></div>
+<div id="heap-count-currentDiv" class="progressText"><span id="heap-count-current"></span></div>
+<div id="heap-count-current-bytesDiv" class="progressText"><span id="heap-count-current-bytes"></span></div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12"><span id="bps-current"></span><span id="bps-current-bytes"></span></div>
+</div>
+<div style="padding-top:20px" class="row">
+<div class="col-xs-12"><a id="btn-addMem"></a></div>
+</div>
+<div class="row">
+<div style="text-align:right;" class="col-xs-6">
+<button id="btn-addGlobalMem" type="button" style="visibility:hidden;" class="btn btn-lg btn-success">Drip Memory</button>
+</div>
+<div style="text-align:left;" class="col-xs-6">
+<button id="btn-dripJVM" type="button" style="visibility:hidden;" class="btn btn-lg btn-info">Drip JVM</button>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div id="bpsChartContainer" style="visibility:hidden;"></div>
+</div>
+</div>
+</div>
+<div id="storeColumn" class="col-xs-3"></div>
+</div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.3/underscore.string.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/sockjs-client/0.3.4/sockjs.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.1/stomp.min.js"></script>
+<script src="//oss.maxcdn.com/signet/0.4.7/signet.min.js"></script>
+<script src="js/combined.2015-01-31-20-56-17.min.js"></script>
+<script>!function (d, s, id)
+{
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id))
+    {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');</script>
+<script>
+    (function (i, s, o, g, r, a, m)
+    {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function ()
+        {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-47069660-1', 'dripstat.com');
+    ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+    var clicky_site_ids = clicky_site_ids || [];
+    clicky_site_ids.push(100642993);
+    (function ()
+    {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//static.getclicky.com/js';
+        ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild(s);
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	
+	"name": "dripstat script",
+	"version": "2.0",
+	"description": "dripstat script",
+	"icons": { "128": "logo.png" },
+	
+	"background": {
+		"scripts": ["background.js"]
+  },	
+	
+	"page_action": {
+		//"default_icon": "offline.jpg"
+	},
+
+	"permissions" : [ 
+		"tabs",
+		"https://dripstat.com/game/"
+	],
+	
+	"content_scripts": [
+		{
+			"matches": ["https://dripstat.com/game/"],
+			"js": ["content.js"],
+			"run_at": "document_start"
+		}
+	]
+}

@@ -1,0 +1,44 @@
+localStats
+{
+	byteCount: 11620,
+	bps: 0,
+	memoryCapacity: 20480,
+	jvmDripUpgrade: t,
+	powerUps: Array[11]…}
+	
+	bps: 0
+	byteCount: 11840
+	jvmDripUpgrade: t
+	memoryCapacity: 20480
+	powerUps: Array[11]
+	specialUpgrades: Array[5]
+	
+	localStats.powerUps[0].available
+	localStats.powerUps[0].buy(localStats)
+	
+	powerUps: Array[11]
+	
+	0: e
+	available: true
+	baseBps: 1
+	basePrice: 20
+	count: 0
+	curPrice: 20
+	currentBps: 1
+	currentPrice: 20
+	desc: "Automatically generate new objects without needing to click"
+	image: "cursor.png"
+	name: "Cursor"
+	priceStr: "22 bytes"
+	purchasedUpgrades: Array[0]
+	length: 0
+	__proto__: Array[0]
+	totalBps: 0
+	upgradeImgXIndex: 7
+	upgradeImgYIndex: 0
+	upgrades: Array[7]
+	0: t
+	_purchased: false
+	_unlocked: false
+	available: false
+	desc: "Cursor generates 1.1x more objects.<br/>Coffe cup clicks generate 10% of BPS"imgXIdx: 0imgYIdx: 0name: "Enhanced Precision"powerup: eavailable: truebaseBps: 1basePrice: 20count: 0curPrice: 20currentBps: 1currentPrice: 20desc: "Automatically generate new objects without needing to click"image: "cursor.png"name: "Cursor"priceStr: (...)purchasedUpgrades: Array[0]totalBps: 0upgradeImgXIndex: 7upgradeImgYIndex: 0upgrades: Array[7]0: t_purchased: false_unlocked: falseavailable: falsedesc: "Cursor generates 1.1x more objects.<br/>Coffe cup clicks generate 10% of BPS"imgXIdx: 0imgYIdx: 0name: "Enhanced Precision"powerup: eavailable: truebaseBps: 1basePrice: 20count: 0curPrice: (...)currentBps: 1currentPrice: 20desc: "Automatically generate new objects without needing to click"image: "cursor.png"name: "Cursor"priceStr: (...)purchasedUpgrades: Array[0]totalBps: 0upgradeImgXIndex: 7upgradeImgYIndex: 0upgrades: Array[7]__proto__: eprice: 30purchased: (...)unlocked: (...)__proto__: a1: t2: t3: t4: t5: t6: tlength: 7__proto__: Array[0]__proto__: eprice: 30purchased: falseunlocked: false__proto__: a1: t_purchased: false_unlocked: falseavailable: falsedesc: "Cursor generates 1.1x more objects.<br/>Coffe cup clicks generate additional 10% of BPS"imgXIdx: 1imgYIdx: 0name: "Sharp Shooter"powerup: eprice: 200purchased: (...)unlocked: (...)__proto__: a2: t_purchased: false_unlocked: falseavailable: falsedesc: "Cursor generates 1.1x more objects.<br/>Coffe cup clicks generate additional 10% of BPS"imgXIdx: 2imgYIdx: 0name: "Click of Power"powerup: eprice: 800purchased: (...)unlocked: (...)__proto__: a3: t4: t5: t6: tlength: 7__proto__: Array[0]__proto__: e
